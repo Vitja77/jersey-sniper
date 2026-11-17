@@ -1,0 +1,7 @@
+# Genuine product codes you have verified (Google the code: the official product page / a trusted
+# shop / classicfootballshirts should show the SAME team + season). One row per code.
+# When a code from a photo is in this list AND the team matches the listing -> PASS.
+# When it is in this list but for a DIFFERENT team -> FAIL (fakes reuse one code on many teams).
+# team must be written the way it appears in listing titles (e.g. "Lakers", "Barcelona").
+# Format examples:  Nike CW3858-100  | Adidas GH7656 | Puma 765722 01 | New Balance MT930000
+code,brand,team,season,kit,version,notes

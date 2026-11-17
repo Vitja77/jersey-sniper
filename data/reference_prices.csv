@@ -1,0 +1,12 @@
+# Resale values used when a site gives no expert estimate (e.g. eBay).
+# pattern = regex matched against the listing title (case-insensitive); first match wins,
+#           so put specific rows ABOVE generic ones.
+# signed  = yes (only signed + COA) | no (only unsigned) | any
+# value   = what you can realistically resell it for. Fill with YOUR numbers from sold listings.
+# The rows below are placeholders to show the format - replace them before trusting alerts.
+pattern,signed,value,notes
+jordan.*bulls|bulls.*jordan,yes,1500,PLACEHOLDER - set from sold listings
+jordan.*bulls|bulls.*jordan,no,250,PLACEHOLDER
+messi.*barcelona|barcelona.*messi,yes,900,PLACEHOLDER
+player issue|match worn|matchworn,no,180,PLACEHOLDER
+\bnba\b.*\bauthentic\b,no,150,PLACEHOLDER

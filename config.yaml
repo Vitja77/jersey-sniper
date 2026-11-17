@@ -1,0 +1,65 @@
+# ---------------- Jersey Sniper config ----------------
+poll_minutes: 5
+sports: [nba, football]
+
+queries:
+  catawiki:
+    - nba jersey
+    - signed nba jersey
+    - basketball jersey
+    - football shirt
+    - signed football shirt
+    - voetbalshirt
+    - match worn shirt
+    - player issue shirt
+    - trikot
+    - maillot
+  ebay:
+    - nba jersey authentic
+    - nba swingman jersey
+    - signed nba jersey
+    - football shirt player issue
+    - signed football shirt coa
+    - vintage football shirt
+    - match worn football shirt
+
+sources:
+  catawiki:
+    enabled: true
+    lang: en
+    ship_to: si                # your country code - used to pick the right shipping cost
+    buyer_fee_pct: 0.09        # Catawiki buyer's commission - check current rate on the site
+    buyer_fixed_fee: 3.0       # per-lot buyer protection fee - check current amount
+    request_delay_s: 2         # be polite, don't hammer the site
+    max_lots_per_query: 25
+  ebay:
+    enabled: false             # turn on after adding keys from developer.ebay.com
+    client_id: ""
+    client_secret: ""
+    marketplace: EBAY_DE       # EBAY_DE, EBAY_GB, EBAY_IT, EBAY_FR, EBAY_US ...
+    currency: EUR
+    max_price: 1500
+    buyer_fee_pct: 0.0
+    limit: 50
+
+deal:
+  min_discount: 0.35           # all-in cost must be >= 35% below market value
+  min_profit: 40               # expected profit after resale fees, in your currency
+  resale_fee_pct: 0.13         # fees when YOU resell (eBay ~13%, Vinted 0%, ...)
+  resale_shipping: 8
+  max_price: 1500
+  auction_alert_window_minutes: 90   # only alert auctions ending soon (earlier bids are meaningless)
+
+authenticity:
+  # PASS > LIKELY > WEAK > UNVERIFIED. FAIL is always rejected.
+  min_level: LIKELY            # LIKELY = a valid product code was read off a photo
+  replica_word_is_fake: true   # set false if you want official "replica/fan version" shirts too
+  max_images: 8
+  ocr_lang: eng
+
+notify:
+  console: true
+  telegram:                    # optional phone alerts: create a bot with @BotFather
+    bot_token: ""
+    chat_id: ""
+  discord_webhook: ""
